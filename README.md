@@ -1,61 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+SISTEM DRIVE SURAT
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi berbasis web untuk pengelolaan arsip surat di lingkungan LSP Polinema. Aplikasi ini dinamai Drive Surat.
+Dibangun menggunakan framework Laravel dan frontend tool Vite.js, sistem ini bertujuan untuk memodernisasi dan mempermudah proses pencatatan, pencarian, dan pengelolaan surat secara digital.
 
-## About Laravel
+Tujuan Proyek
+Menyediakan platform yang efisien dan terstruktur untuk mengelola surat masuk dan surat keluar, serta menyimpan arsip digital yang mudah diakses dan dicari.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Fitur Utama Aplikasi
+Proyek Drive Surat mengimplementasikan fungsi dasar CRUD (Create, Read, Update, Delete) pada dua modul utama:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Kategori Surat
+Modul pengelolaan klasifikasi jenis-jenis surat.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Input data kategori surat
+Update kategori surat
+Hapus kategori surat
+Pencarian kategori surat
 
-## Learning Laravel
+2. Arsip Surat
+Modul inti untuk manajemen dokumen surat digital.
+Upload arsip surat (insert file)
+Update file arsip
+Hapus arsip surat
+Pencarian arsip berdasarkan kata kunci
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. Halaman About
+Halaman yang menampilkan identitas mahasiswa pengembang aplikasi
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Cara Menjalankan Aplikasi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clone Repository
+Buka terminal Anda dan clone proyek ini.
 
-## Laravel Sponsors
+git clone https://github.com/PuhanRialdo/LSP-POLINEMA.git
+cd LSP-POLINEMA
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Install Dependencies
+Install paket PHP dan JavaScript yang dibutuhkan proyek:
 
-### Premium Partners
+composer install
+npm install && npm run dev
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. Konfigurasi Environment
+Salin file konfigurasi dan atur key aplikasi.
 
-## Contributing
+cp .env.example .env
+php artisan key:generate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Migrasi dan Seeding Database
+Jalankan migrasi untuk membuat tabel, dan seeding untuk mengisi data awal.
 
-## Code of Conduct
+php artisan migrate --seed
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Jalankan Server Lokal
+Aplikasi sekarang siap diakses melalui browser.
 
-## Security Vulnerabilities
+php artisan serve
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Screenshot aplikasi 
+
+1. <img width="1918" height="876" alt="image" src="https://github.com/user-attachments/assets/9fd275b4-d057-439e-85f3-5e37ed713ec4" />
+menampilkan halaman dashboard
+
+2. <img width="1918" height="875" alt="image" src="https://github.com/user-attachments/assets/43ca00a5-24ca-4bd6-85cb-e086836f8ec3" />
+tampilan menu arsip
+
+3. <img width="1918" height="897" alt="image" src="https://github.com/user-attachments/assets/046e0d69-f89e-4d6a-a93e-9e6ec3433b16" />
+tampilan detail surat yang di arsipkan
+
+4. <img width="1917" height="918" alt="image" src="https://github.com/user-attachments/assets/d533c6b4-0eeb-4b98-888c-1dc3929fa980" />
+tampilan menghapus arsip surat 
+
+5. <img width="1918" height="896" alt="image" src="https://github.com/user-attachments/assets/92852ab9-d926-479a-a154-6dcf2de5884f" />
+tampilan menu kategori
+
+6. <img width="1917" height="876" alt="image" src="https://github.com/user-attachments/assets/d932cc25-a593-42b3-8b77-839378005c55" />
+ edit kategori
+
+7. <img width="1917" height="883" alt="image" src="https://github.com/user-attachments/assets/21437b1d-1af3-435e-9d3b-72878aba7e7b" />
+tambah kategori
+
+8. <img width="1918" height="967" alt="image" src="https://github.com/user-attachments/assets/41ec04db-7507-4a3b-8e8d-66af93ae535b" />
+hapus kategori
+
+9. <img width="1918" height="871" alt="image" src="https://github.com/user-attachments/assets/a739f1ec-3c76-4dd6-a95c-4356125e68bf" />
+tampilan halaman tentang 
+
+
